@@ -1,0 +1,29 @@
+{
+  "name": "moprop_server",
+  "version": "1.0.0",
+  "description": "moproperty server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitlabio/moproperty.git"
+  },
+  "author": "rouan van der ende",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitlabio/moproperty/issues"
+  },
+  "homepage": "https://github.com/bitlabio/moproperty#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.1",
+    "express": "^4.14.0",
+    "imagemagick": "^0.1.3",
+    "mongojs": "^2.4.0",
+    "multer": "^1.2.0"
+  }
+}

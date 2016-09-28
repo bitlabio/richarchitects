@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>rich architects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="jquery-3.1.1.min.js"></script>
+
+  <style>
+  a { color: #888; text-decoration: none;}
+  a:hover { color: #000; }
+  </style>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px; padding:15px;">
+        
+        <div style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><span>RICH ARCHITECTS</span></div>
+        <div style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/contact"><span>CONTACT</span></a></div>
+      </div>
+    </div>
+</div>
+
+<div style="background: rgb(251,251,251);">
+<div class="container" >
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px;  padding-left: 15px;padding-top: 15px; ">
+
+        <div id="projects" style="">asdsd
+        </div>
+
+
+      </div>
+    </div>    
+  </div>
+</div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+
+var projects = []
+
+projects.push({id: 1, name:"Mapungubwe", thumbimage:"thumb_001.jpg", slug:"mapungubwe"})
+projects.push({id: 2, name:"Alexandra Heritage Centre", thumbimage:"thumb_002.jpg", slug:"alexandra"})
+projects.push({id: 3, name:"House Kennedy", thumbimage:"thumb_003.jpg", slug:"kennedy"})
+projects.push({id: 4, name:"FR-2 Office", thumbimage:"thumb_004.jpg", slug:"fr2"})
+projects.push({id: 5, name:"Aksum", thumbimage:"thumb_005.jpg", slug:"aksum"})
+projects.push({id: 6, name:"Kigali City", thumbimage:"thumb_006.jpg", slug:"kigali"})
+projects.push({id: 7, name:"Sam Nzima Museum", thumbimage:"thumb_007.jpg", slug:"museum"})
+projects.push({id: 8, name:"Braamfontein Lofts", thumbimage:"thumb_008.jpg", slug:"braamfontein"})
+projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", slug:"homestead"})
+projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.jpg", slug:"hayat"})
+projects.push({id: 11, name:"Greenstone Retreat", thumbimage:"thumb_011.jpg", slug:"greenstone"})
+projects.push({id: 12, name:"Geralta Lodge", thumbimage:"thumb_012.jpg", slug:"geralta"})
+projects.push({id: 13, name:"Marula Pavilion", thumbimage:"thumb_013.jpg", slug:"marula"})
+projects.push({id: 14, name:"House Vercamer", thumbimage:"thumb_014.jpg", slug:"vercamer"})
+projects.push({id: 15, name:"Batsinda", thumbimage:"thumb_015.jpg", slug:"batsinda"})
+projects.push({id: 16, name:"Cactus Green Park", thumbimage:"thumb_016.jpg", slug:"cactus"})
+projects.push({id: 17, name:"Kimichanga", thumbimage:"thumb_017.jpg", slug:"kimichanga"})
+
+
+$(document).ready(function() 
+{
+  projects.sort(function(a,b) { return b.id - a.id}); //flips order so newest at the top.
+
+  $("#projects").html("")  
+  for (var p in projects) {
+    $("#projects").append('<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%" src="/content/'+projects[p].thumbimage+'"><span style="font-size: 12px; font-weight:700; top: -12px; position: relative;">'+projects[p].name+'</span></div></a>')  
+  }
+
+  $(".projectthumb").width( $("#projects").width()/4 - (15) )
+  $(".projectthumb").height( (($("#projects").width()/4 - (15))/1.618) + 30 )
+  $(".projectthumb").css( "margin-right", 15 )
+  $(".projectthumb").css( "opacity", 0.90 )
+  $(".projectthumb").css( "color", "#fff" )
+  
+  $(".projectthumb").hover( 
+     function() {
+        $(this).css( "color", "#000" )
+         $(this).stop().animate({"opacity": 1}, 150);
+         //$(this).stop().animate({"color": "#000"}, 150);
+         
+      }, function() {
+        $(this).css( "color", "#fff" )
+        $(this).stop().animate({"opacity": 0.90}, 150);
+        
+      }
+
+  )
+
+
+});
+
+</script>
+
+</body>
+</html>
