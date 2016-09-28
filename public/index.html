@@ -89,15 +89,34 @@ $(document).ready(function()
 
   $("#projects").html("")  
   for (var p in projects) {
-    $("#projects").append('<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%" src="/content/'+projects[p].thumbimage+'"><span style="font-size: 12px; font-weight:700; top: -12px; position: relative;">'+projects[p].name+'</span></div></a>')  
+    $("#projects").append('<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%" src="/content/'+projects[p].thumbimage+'"><span style="font-size: 12px; font-weight:700; top: -7px; position: relative;">'+projects[p].name+'</span></div></a>')  
   }
 
-  $(".projectthumb").width( $("#projects").width()/4 - (15) )
-  $(".projectthumb").height( (($("#projects").width()/4 - (15))/1.618) + 30 )
+  
+projectThumbsCss();
+
+});
+
+
+$(window).resize(function(){
+    projectThumbsCss();
+});
+
+
+function projectThumbsCss () {
+var perRow = 5;
+
+if ($("#projects").width() < 800) { perRow = 4; }
+if ($("#projects").width() < 600) { perRow = 3; }
+if ($("#projects").width() < 500) { perRow = 2.1; } //bug
+
+  $(".projectthumb").width( $("#projects").width()/perRow - (15) )
+  $(".projectthumb").height( (($("#projects").width()/perRow - (15))/1.618) + 35 )
   $(".projectthumb").css( "margin-right", 15 )
   $(".projectthumb").css( "opacity", 0.90 )
   $(".projectthumb").css( "color", "#fff" )
   
+  $(".projectthumb").unbind();
   $(".projectthumb").hover( 
      function() {
         $(this).css( "color", "#000" )
@@ -111,9 +130,7 @@ $(document).ready(function()
       }
 
   )
-
-
-});
+}
 
 </script>
 
