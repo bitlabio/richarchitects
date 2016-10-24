@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>rich architects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="/jquery.min.js"></script>
+
+  <style>
+  a { color: #888; text-decoration: none;}
+  a:hover { color: #000; }
+  </style>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px; padding:15px;">
+        
+        <div style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><a href="/"><span>RICH ARCHITECTS</span></a></div>
+        <div style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/"><span>PROJECTS</span></a></div>
+      </div>
+    </div>
+</div>
+
+<div style="background: rgb(251,251,251);">
+<div class="container" >
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px;  padding-left: 15px;padding-top: 15px; ">
+
+
+        <div id="submit" style="">
+
+        	<div> <span style="color: #ccc;font-weight: 600;font-size: 16px; font-family: monospace;">ADMIN</span><br>
+        	<span style="color: #000;font-weight: 600;font-size: 20px; font-family: monospace; position: relative; top: -10px;">CREATE NEW PROJECT</span>
+        	</div>
+
+        	<div>
+			      <input type="text" placeholder="Project name" id="name" ><br>
+			      richarchitects.com/ <input type="text" placeholder="url" id="url" ><br>
+			     
+			    	 <button id="create" >CREATE</button> <span id="result"></span>
+			     
+        	</div>
+
+        </div>
+
+
+      </div>
+    </div>    
+  </div>
+</div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+	$("#create").click( function (ev) {
+		console.log('clicked.')
+		var formdata = {}
+		formdata.name = $("#name").val();
+		formdata.url = $("#url").val();
+		  $.ajax({
+		      url: '/api/create', 
+		      type: 'POST', 
+		      contentType: 'application/json', 
+		      data: JSON.stringify(formdata)}
+		    ).done(function(result) {
+		      console.log(result);
+		      $("#result").html('success.')
+		     
+		      
+		    });
+
+
+	})//end click
+</script>
+
+</body>
+</html>

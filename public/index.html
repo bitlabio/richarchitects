@@ -16,13 +16,13 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <script src="jquery-3.1.1.min.js"></script>
+  <script src="/jquery.min.js"></script>
 
   <style>
   a { color: #888; text-decoration: none;}
@@ -38,8 +38,8 @@
     <div class="row">
       <div class="twelve column" style="margin-top: 10px; padding:15px;">
         
-        <div style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><span>RICH ARCHITECTS</span></div>
-        <div style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/contact"><span>CONTACT</span></a></div>
+        <div id="logo" style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><span>RICH ARCHITECTS</span></div>
+        <div id="menu" style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/contact"><span>CONTACT</span></a></div>
       </div>
     </div>
 </div>
@@ -49,8 +49,7 @@
     <div class="row">
       <div class="twelve column" style="margin-top: 10px;  padding-left: 15px;padding-top: 15px; ">
 
-        <div id="projects" style="">asdsd
-        </div>
+        <div id="projects" style="">loading...</div>
 
 
       </div>
@@ -60,76 +59,147 @@
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+<div id="admin" style="margin-top: 450px; display: none;">
+  <div class="container" >
+    <div class="row">
+      <div class="twelve column" style="padding: 15px;" id="adminmenu">
+
+      <a href="/submit">create new project</a> or <a href="/logout">logout</a>
+
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+
 <script>
 
 var projects = []
-
-projects.push({id: 1, name:"Mapungubwe", thumbimage:"thumb_001.jpg", slug:"mapungubwe"})
-projects.push({id: 2, name:"Alexandra Heritage Centre", thumbimage:"thumb_002.jpg", slug:"alexandra"})
-projects.push({id: 3, name:"House Kennedy", thumbimage:"thumb_003.jpg", slug:"kennedy"})
-projects.push({id: 4, name:"FR-2 Office", thumbimage:"thumb_004.jpg", slug:"fr2"})
-projects.push({id: 5, name:"Aksum", thumbimage:"thumb_005.jpg", slug:"aksum"})
-projects.push({id: 6, name:"Kigali City", thumbimage:"thumb_006.jpg", slug:"kigali"})
-projects.push({id: 7, name:"Sam Nzima Museum", thumbimage:"thumb_007.jpg", slug:"museum"})
-projects.push({id: 8, name:"Braamfontein Lofts", thumbimage:"thumb_008.jpg", slug:"braamfontein"})
-projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", slug:"homestead"})
-projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.jpg", slug:"hayat"})
-projects.push({id: 11, name:"Greenstone Retreat", thumbimage:"thumb_011.jpg", slug:"greenstone"})
-projects.push({id: 12, name:"Geralta Lodge", thumbimage:"thumb_012.jpg", slug:"geralta"})
-projects.push({id: 13, name:"Marula Pavilion", thumbimage:"thumb_013.jpg", slug:"marula"})
-projects.push({id: 14, name:"House Vercamer", thumbimage:"thumb_014.jpg", slug:"vercamer"})
-projects.push({id: 15, name:"Batsinda", thumbimage:"thumb_015.jpg", slug:"batsinda"})
-projects.push({id: 16, name:"Cactus Green Park", thumbimage:"thumb_016.jpg", slug:"cactus"})
-projects.push({id: 17, name:"Kimichanga", thumbimage:"thumb_017.jpg", slug:"kimichanga"})
-
+var admin = false;
 
 $(document).ready(function() 
 {
-  projects.sort(function(a,b) { return b.id - a.id}); //flips order so newest at the top.
-
-  $("#projects").html("")  
-  for (var p in projects) {
-    $("#projects").append('<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%" src="/content/'+projects[p].thumbimage+'"><span style="font-size: 12px; font-weight:700; top: -7px; position: relative;">'+projects[p].name+'</span></div></a>')  
-  }
+  resizing();
+  checklogin()
+  //get projects
+  $.ajax({
+        url: '/api/findall', 
+        type: 'GET', 
+        contentType: 'application/json', 
+        data: JSON.stringify({})}
+    ).done(function(projectsdb) {
+      projects = projectsdb;
+      projects.sort(function(a,b) { return b.id - a.id}); //flips order so newest at the top.
+      projectsRenderHtml()
+    } );  
 
   
-projectThumbsCss();
-
 });
 
 
-$(window).resize(function(){
-    projectThumbsCss();
-});
 
+
+function projectsRenderHtml() {
+  //generates the html for the projectThumbnails
+  $("#projects").html("")  
+  for (var p in projects) {
+    var adminonly = false;
+    var ht = '<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%"' 
+
+    if (projects[p].thumbimage) {
+      ht += 'src="/content/'+projects[p].thumbimage+'">'
+    } else {
+      adminonly = true;
+      ht += 'src="/images/blank.jpg">'
+    }
+
+    ht += '<span style="font-size: 12px; font-weight:700; top: -7px; position: relative;">'+projects[p].name+'</span></div></a>'
+
+    if ((adminonly && admin)||(adminonly == false)) { $("#projects").append(ht) }
+
+    
+
+  }
+  projectThumbsCss();
+}
 
 function projectThumbsCss () {
-var perRow = 5;
-
-if ($("#projects").width() < 800) { perRow = 4; }
-if ($("#projects").width() < 600) { perRow = 3; }
-if ($("#projects").width() < 500) { perRow = 2.1; } //bug
-
+  //applies css to project thumbnails
+  var perRow = 4;
+  if ($("#projects").width() < 800) { perRow = 4; }
+  if ($("#projects").width() < 600) { perRow = 3; }
+  if ($("#projects").width() < 500) { perRow = 2.1; } //bug
   $(".projectthumb").width( $("#projects").width()/perRow - (15) )
   $(".projectthumb").height( (($("#projects").width()/perRow - (15))/1.618) + 35 )
   $(".projectthumb").css( "margin-right", 15 )
   $(".projectthumb").css( "opacity", 0.90 )
   $(".projectthumb").css( "color", "#fff" )
-  
+
   $(".projectthumb").unbind();
   $(".projectthumb").hover( 
-     function() {
-        $(this).css( "color", "#000" )
-         $(this).stop().animate({"opacity": 1}, 150);
-         //$(this).stop().animate({"color": "#000"}, 150);
-         
-      }, function() {
-        $(this).css( "color", "#fff" )
-        $(this).stop().animate({"opacity": 0.90}, 150);
-        
-      }
+   function() {
+      $(this).css( "color", "#000" )
+      $(this).stop().animate({"opacity": 1}, 150);
+    }, function() {
+      $(this).css( "color", "#fff" )
+      $(this).stop().animate({"opacity": 0.90}, 150);
+    }
+  ) //end hover
+}// end function
 
-  )
+$(window).resize(function(){
+    projectThumbsCss(); //fix the css whenever the window resizes
+});
+
+
+function checklogin() {
+  $.ajax({
+      url: '/api/checklogin', 
+      type: 'GET', 
+      contentType: 'application/json', 
+      data: JSON.stringify({})}
+    ).done(function(result) {
+      console.log(result);
+      if (result.login == "success") {
+        admin = true;
+        $("#admin").show()
+        $("#admin").css("margin-top", 0)
+        //$("#taken").click(takenProp);
+        //$("#delete").click(deleteProp);
+      } else {  
+        console.log("not loggedin")  
+        $("#adminmenu").html('<a href="/login">admin</a> ')
+      }
+      
+    });
+    projectsRenderHtml()
+  }
+
+
+
+
+
+$(window).resize(function(){
+    // resize
+    resizing();
+});
+
+function resizing() {
+  $("#teambox").width($("#project").width() - 120)
+  $("#descriptionbox").width($("#project").width() - 120)
+  
+  console.log("window width: "+$(window).width())
+  if ($(window).width() < 600) { 
+    console.log("small!")
+    $("#logo").css("font-size", "16px")
+    $("#menu").css("font-size", "12px")
+
+  } else { 
+    console.log("not small!")
+    $("#logo").css("font-size", "20px")
+    $("#menu").css("font-size", "15px")
+  }
 }
 
 </script>

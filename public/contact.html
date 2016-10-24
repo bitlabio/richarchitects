@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>rich architects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="/jquery.min.js"></script>
+
+  <style>
+  a { color: #888; text-decoration: none;}
+  a:hover { color: #000; }
+  </style>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px; padding:15px;">
+        
+        <div id="logo" style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><a href="/"><span>RICH ARCHITECTS</span></a></div>
+        <div id="menu" style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/"><span>PROJECTS</span></a></div>
+      </div>
+    </div>
+</div>
+
+<div style="background: rgb(251,251,251);">
+
+
+
+<div class="container" >
+  <div class="row">
+
+
+    
+
+
+
+    
+  
+    <div class="one-third column" style="padding: 15px;">
+      <p><b>Robert Rich</b><br>
+      Architect<br>
+      +27 (0)82 367 7738<br>
+      <a href="robrich.jr@gmail.com ">robrich.jr@gmail.com </a></p> 
+
+      <p><b>Rogan Rich</b><br>
+      Architect<br>
+      +27 (0)72 477 4555<br>
+      <a href="mailto:rogan@richlabsdesign.com">rogan@richlabsdesign.com</a></p>
+
+  
+      <p><b>Shawn Labuschagne</b></p>
+      Architectural Designer<br>
+      +27 (0)82 740 3107<br>
+      <a href="shawn@richlabsdesign.com">shawn@richlabsdesign.com</a></p>
+    
+    </div>
+
+
+    <div id="gmapsbox" class="two-thirds column" style="background: #eee;">
+      <iframe id="gmaps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.598412972692!2d28.01979131560898!3d-26.177205169234995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c7436bedaef%3A0x3e0161b627d6dbe2!2s7+Escombe+Ave%2C+Johannesburg%2C+2193!5e0!3m2!1sen!2sza!4v1477325428588" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>    
+
+    </div>    
+
+    
+    
+  </div>  
+
+    
+  </div><!-- container -->
+
+
+
+
+
+
+
+
+</div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script type="text/javascript">
+
+$(document).ready(function() { 
+  resizing();
+});
+
+$(window).resize(function(){
+    // resize
+    resizing();
+});
+
+function resizing() {
+  $("#teambox").width($("#project").width() - 120)
+  $("#descriptionbox").width($("#project").width() - 120)
+  
+  $("#gmaps").width( $("#gmapsbox").width(  ) )
+
+  console.log("window width: "+$(window).width())
+  if ($(window).width() < 600) { 
+    console.log("small!")
+    $("#logo").css("font-size", "16px")
+    $("#menu").css("font-size", "12px")
+
+  } else { 
+    console.log("not small!")
+    $("#logo").css("font-size", "20px")
+    $("#menu").css("font-size", "15px")
+  }
+}
+
+</script>
+
+</body>
+</html>

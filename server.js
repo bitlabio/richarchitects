@@ -2,9 +2,187 @@
 // https://nodejs.org/en/docs/es6/
 // nodemon --harmony server.js 
 
-var client = { name: "rich architects", git: "https://github.com/bitlabio/richarchitects"}
-
+var client = { name: "rich architects", git: "https://github.com/bitlabio/richarchitects", mongodb: "richarch", mongocollections: ['projects']}
 console.log(client)
+
+
+//temp db.
+
+var projects = []
+
+projects.push({id: 1, name:"Mapungubwe", thumbimage:"thumb_001.jpg", slug:"mapungubwe",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 2, name:"Alexandra Heritage Centre", thumbimage:"thumb_002.jpg", slug:"alexandra",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 3, name:"House Kennedy", thumbimage:"thumb_003.jpg", slug:"kennedy",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 4, name:"FR-2 Office", thumbimage:"thumb_004.jpg", slug:"fr2",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 5, name:"Aksum", thumbimage:"thumb_005.jpg", slug:"aksum",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 6, name:"Kigali City", thumbimage:"thumb_006.jpg", slug:"kigali",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 7, name:"Sam Nzima Museum", thumbimage:"thumb_007.jpg", slug:"museum",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 8, name:"Braamfontein Lofts", thumbimage:"thumb_008.jpg", slug:"braamfontein",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", slug:"homestead",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.jpg", slug:"hayat",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+  ]
+})
+
+projects.push({id: 11, name:"Greenstone Retreat", thumbimage:"thumb_011.jpg", slug:"greenstone",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"greenstone_1.jpg"}, 
+    {type:"wideimg", file:"greenstone_2.jpg"}, 
+    {type:"wideimgthree", files: ["greenstone_3.jpg", "greenstone_4.jpg", "greenstone_5.jpg"]}, 
+  ]
+})
+
+projects.push({id: 12, name:"Geralta Lodge", thumbimage:"thumb_012.jpg", slug:"geralta", 
+  location: "Geralta, Ethiopia",
+  locationlink: "https://www.google.co.za/maps/place/Gheralta+Lodge/@13.9706612,39.4214988,17z/data=!3m1!4b1!4m5!3m4!1s0x166b7098802079c3:0xae6d8c959506cfd9!8m2!3d13.970656!4d39.4236928",
+  date: "December ‎2013",
+  team: ["Rogan Rich", "Shawn Labuschagne", "Rouan van der Ende", "Riyahd Cassiem"],
+  description: "Geralta Lodge is something completely unique! It is a boutique lodge in Northern Ethiopia that uses the sustainable technology of light earth tiles to create timbrel vaulted structures that are clad with local stone to camouflage the chalets in the dramatic landscape.",
+
+  content:[
+    {type:"wideimg", file:"geralta_4.jpg"}, 
+    {type:"wideimg", file:"geralta_5.jpg"}, 
+    {type:"wideimgtwo", files: ["geralta_7.jpg", "geralta_6.jpg"]}, 
+    {type:"wideimgthree", files: ["geralta_1.jpg", "geralta_2.jpg", "geralta_3.jpg"]}, 
+  ]
+})
+
+projects.push({id: 13, name:"Marula Pavilion", thumbimage:"thumb_013.jpg", slug:"marula",
+  location: "Mountain View, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Namibia/@-22.6930922,9.5032826,5z/data=!3m1!4b1!4m5!3m4!1s0x1bf53c7e6ed37521:0xd3b9e5a5a8ecb261!8m2!3d-22.95764!4d18.49041",
+  date: "December 2014",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"marula_4.jpg"}, 
+    {type:"wideimg", file:"marula_5.jpg"}, 
+    {type:"wideimg", file:"marula_2.jpg"}, 
+    {type:"wideimg", file:"marula_3.jpg"}, 
+    
+    {type:"wideimg", file:"marula_1.jpg"}, 
+    
+    
+    
+  ]
+})
+
+projects.push({id: 14, name:"House Vercamer", thumbimage:"thumb_014.jpg", slug:"vercamer",
+  location: "Namibia",
+  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  date: "June 2016",
+  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  description: "",  
+  content:[
+    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"vercamer_2.jpg"}, 
+  ]
+})
+//projects.push({id: 15, name:"Batsinda", thumbimage:"thumb_015.jpg", slug:"batsinda"})
+//projects.push({id: 16, name:"Cactus Green Park", thumbimage:"thumb_016.jpg", slug:"cactus"})
+//projects.push({id: 17, name:"Kimichanga", thumbimage:"thumb_017.jpg", slug:"kimichanga"})
+
+
 
 var imagemagickOn = true;
 if (process.platform == "win32") {  imagemagickOn = false; }
@@ -32,7 +210,7 @@ var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
 var mongojs = require('mongojs')
-var db = mongojs('moprop',["properties"])
+var db = mongojs(client.mongodb,client.mongocollections)
 
 var cookieParser = require('cookie-parser')
 var session = require('cookie-session')
@@ -46,11 +224,22 @@ app.use(session({
 }))
 
 
-app.get('/view/:pid', (req, res) => {
-  console.log(req.params)
-  res.sendFile(path.join(__dirname+'/public/viewprop.html'));
+app.get('/dbload', (req,res) => {
+	dbload();
+	res.end('success')
 })
 
+function dbload() {
+  db.projects.drop();
+  for (var p in projects) {
+    console.log("loading project "+p)
+    db.projects.save(projects[p], function (err, res) { console.log("success")})
+  }
+}
+
+dbload();
+
+app.use('/', express.static('public')); //index.html default
 
 app.get('/', (req,res) => {
   if (req.session.hash) {
@@ -64,12 +253,52 @@ app.get('/', (req,res) => {
   
 })
 
-
-app.use('/', express.static('public')); //index.html default
-
 app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname+'/public/contact.html'));  
 })
+
+app.get('/:slug', (req, res, next) => {
+  console.log("debug. req.params.")
+  console.log(req.params)
+
+
+  db.projects.find( (err, projects) => {  
+
+	  var found = false;
+	  for (var p in projects) { if (projects[p].slug == req.params.slug) { found = true; } }
+
+	  if (found) { 
+	  		console.log('success!')
+	  		res.sendFile(path.join(__dirname+'/public/project.html'));  
+		} else {
+			next();
+		}
+
+  }) 
+
+
+
+
+  //res.sendFile(path.join(__dirname+'/public/viewprop.html'));
+})
+
+
+app.get('/api/findall', (req, res) => { 
+	console.log("findall.")
+	db.projects.find( (err, result) => {  res.json(result) }) }
+)
+
+app.post('/api/findone', (req, res) => {
+  console.log(">>")
+  var slug = req.body.path.split('/').pop()
+  console.log("slug:"+slug)
+
+  db.projects.findOne({"slug":slug}, (err, project) => {
+    console.log(project);
+    res.json(project);
+  })
+})
+
 
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname+'/public/login.html'));  
@@ -86,6 +315,33 @@ app.get('/submit', (req, res) => {
   } else {
     res.redirect("/login")
   }  
+  
+})
+
+app.post('/api/create', (req, res) => {
+  if (req.session.hash == lastlogin) {
+  	req.body.timestamp = Date.now();
+
+  	var newproject = {}
+  	newproject.name = req.body.name;
+  	newproject.slug = req.body.url;
+  	newproject.id = -1;
+
+  	db.projects.find( (err, result) => {  
+  		
+  		var highestid = -1;
+  		for (var p in result) { if (result[p].id > highestid) { highestid = result[p].id; }}
+  		newproject.id = highestid + 1;
+  		db.projects.save(newproject, function (err, result) {
+			console.log(result)
+			console.log(req.body)
+			res.json(result);		
+		} );
+  	}) 
+	
+  } else {
+  	res.end('error')
+  }
   
 })
 
@@ -213,11 +469,7 @@ app.post('/api/contact', (req, res) => {
 
 })
 
-app.post('/api/submit', (req, res) => {
-  req.body.pid = Date.now();
-  db.properties.save(req.body);
-  res.json(req.body.pid);
-})
+
 
 var cpUpload = upload.fields([{ name: 'file', maxCount: 1 }, { name: 'gallery', maxCount: 8 }])
   app.post('/fileupload', cpUpload,  (req, res) => {

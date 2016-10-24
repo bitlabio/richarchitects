@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Login</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <script src="/jquery.min.js"></script>
+  
+  <script src="/scrypt.min.js"></script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+
+
+
+<div class="mopropSearch" style="margin-top: 50px">
+	<div class="container" style="z-index: 999; ">
+		<div id="mopropSearchBox" style="background: #3c69a2; padding: 20px; border-radius: 10px; position: relative;">
+
+				<div class="row" style="padding: 20px 20px 10px 20px;">
+			      <input class="u-full-width" type="password" placeholder="password" id="password" >
+			    </div>
+
+				
+
+			     <div class="row" style="margin: 10px 20px 10px 20px; text-align: center;">
+			    	 <button id="submitLogin" style="background: #fff; color: #3c69a2; border: none;">LOGIN</button>
+			     </div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+var scrypt = scrypt_module_factory();
+
+$(document).ready( function() {
+
+
+  $("#submitLogin").mousedown(function() {
+    //$("#submitLogin").html("REQUESTING..")
+  });
+
+  $("#submitLogin").click( function() {
+    $('#submitLogin').prop('disabled', true);
+    $('#submitLogin').css('background', "none");
+    $('#submitLogin').css('color', "rgba(255,255,255,1)");
+    $("#submitLogin").html("REQUESTING SALT...")
+
+    $.ajax({
+        url: '/api/login', 
+        type: 'POST', 
+        contentType: 'application/json', 
+        data: JSON.stringify({"request": "salt"}) }
+    ).done(function( salt ) {
+      console.log(salt)
+      $("#submitLogin").html("ENCRYPTING...")
+      var p = $("#password").val();
+      var enc = hash(p, salt);
+      console.log(enc);
+      
+      $.ajax({url:'/api/login', type:'POST', contentType: 'application/json', data: JSON.stringify({"request":"login","hash": enc})}).done( function(result) {
+        console.log(result)
+        if (result == "success") {
+          $('#submitLogin').css('color', "#fff");
+          $('#submitLogin').css('background', "#7abb17");
+          $("#submitLogin").html("SUCCESS")
+          window.location.replace("/");
+        } else {
+          $('#submitLogin').css('color', "#fff");
+          $('#submitLogin').css('background', "#f0491f");
+          $("#submitLogin").html("ERROR")
+
+          $('#submitLogin').prop('disabled', false);
+        }
+      })
+
+      
+    });
+    
+
+  })
+
+});
+
+
+function hash(input, salt) {
+  var encrypted = scrypt.crypto_scrypt(scrypt.encode_utf8(input), scrypt.encode_utf8(salt), 16384, 8, 1, 32);
+  return scrypt.to_hex(encrypted)
+}
+</script>
+
+</body>
+</html>

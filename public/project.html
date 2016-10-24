@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>rich architects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="/jquery.min.js"></script>
+
+  <style>
+  a { color: #888; text-decoration: none;}
+  a:hover { color: #000; }
+  .dragdrop { background: #f00; min-width: 100px; min-height: 100px; }
+  
+  #addbutton { opacity: 0.75; cursor: pointer;}
+  #imgselector { 
+    color: #ccc;
+text-align: center; margin-top: 10px; background: #fff; width: 100px; padding: 8px; border-radius: 4px; border: 2px #eee solid;  position: absolute;   top: -80px; left: 0px;    
+-webkit-box-shadow: 2px 10px 28px -5px rgba(0,0,0,0.14);
+-moz-box-shadow: 2px 10px 28px -5px rgba(0,0,0,0.14);
+box-shadow: 2px 10px 28px -5px rgba(0,0,0,0.14);
+}
+
+#imgselector img { opacity: 0.75; cursor: pointer;}
+#imgselector img:hover { opacity: 1; cursor: pointer;}
+.image { width: 100px; height: 100px; background: #f00; float:left;}
+
+.imagerow { margin-bottom: 15px; width: 100%; }
+
+#project a { color: #000; }
+
+  </style>
+
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px; padding:15px;">
+        
+        <div id="logo" style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><a href="/"><span>RICH ARCHITECTS</span></a></div>
+        <div id="menu" style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/" style="margin-right: 15px;"><span>PROJECTS</span></a> <a href="/contact"><span>CONTACT</span></a></div>
+      </div>
+    </div>
+</div>
+
+<div style="background: rgb(251,251,251);">
+<div class="container" >
+    <div class="row">
+      <div class="twelve column" style="margin-top: 10px;  padding-left: 15px;padding-top: 15px; ">
+
+        <div id="project" style="">
+
+          <div style="width: 80px; float:left; color: #b1b1b1; text-align: right; padding-right: 10px;">PROJECT</div><div style="float:left;"><span id="name" style="text-transform: uppercase;"></span></div><br>
+          <div style="width: 80px; float:left; color: #b1b1b1; text-align: right; padding-right: 10px;">LOCATION</div><div style="float:left;"><span id="location"></span></div><br>
+          <div style="width: 80px; float:left; color: #b1b1b1; text-align: right; padding-right: 10px;">DATE</div><div style="float:left;"><span id="date"></span></div><br>
+          <div style="width: 80px; float:left; color: #b1b1b1; text-align: right; padding-right: 10px;">TEAM</div><div style="float:left;" id="teambox"><span id="team"></span></div>
+
+  
+        </div>
+
+       
+        
+
+
+
+      </div>
+    </div>    
+
+<div class="row" style="margin-top: 15px;">
+     <div class="twelve column">
+        <span id="description"></span>
+     </div>
+  </div>
+
+
+
+  <div class="row" style="margin-top: 15px;">
+     <div id="content" class="twelve column">
+      
+     </div>
+  </div>
+
+
+  <div class="row">
+     <div class="twelve column" style="font-weight: bold;margin-top: 15px; margin-bottom: 45px; text-align: center;">
+        <a href="/" style="margin-right: 15px;"><span>DONE</span></a>      
+     </div>
+  </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<div id="admin" style="margin-top: 450px; display: none;">
+
+  <div class="container" >
+    <div class="row">
+      <div class="twelve column" style="padding: 15px;" id="adminmenu">
+      <a href="/submit">create new project</a> or <a href="/logout">logout</a>
+      </div>
+    </div>    
+  </div>
+
+  <div class="container adder" style="margin-bottom: 50px;" >
+    <div class="row">
+       <div class="twelve column">
+          <div class="add" style="text-align: center;  top: 20px; position: relative; width: 126px; margin: 0 auto;"><img id="addbutton" src="/images/add.png">
+            <div id="imgselector" style="display:none; ">
+              <img id="imgselector1" src="/images/img_1.png" style="width: 100px;"><br>or<br>
+              <img id="imgselector2" src="/images/img_2.png" style="width: 100px;"><br>or<br>
+              <img id="imgselector3" src="/images/img_3.png" style="width: 100px;">
+            </div>
+          </div>
+       </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+
+
+
+$(document).ready(function() 
+{
+  checklogin()
+  //load project
+  console.log(window.location.pathname)
+$.ajax({
+      url: '/api/findone', 
+      type: 'POST', 
+      contentType: 'application/json', 
+      data: JSON.stringify({path: window.location.pathname})}
+  ).done(function(property) {
+    console.log(property)
+    //$("#project").html(JSON.stringify(property));
+    $("#name").html(property.name);
+    $("#location").html('<a href="'+property.locationlink+'">'+property.location+'</a>');
+    $("#date").html(property.date);
+    $("#team").html(property.team.join(", "));
+    $("#description").html(property.description);
+
+    resizing();
+
+    $("#thumbimage").html(property.thumbimage);
+    $("#photos").html(property.description);
+
+    //CONTENT
+    var contenthtml = ""
+    for (var c in property.content) {
+      if (property.content[c].type == "wideimg") {
+        contenthtml += '<img src="/content/'+property.content[c].file+'" style="width:100%;"><br>'
+      }
+      if (property.content[c].type == "wideimgtwo") {
+        contenthtml += '<img src="/content/'+property.content[c].files[0]+'" style="width:50%;">'
+        contenthtml += '<img src="/content/'+property.content[c].files[1]+'" style="width:50%;"><br>' 
+      }
+      if (property.content[c].type == "wideimgthree") {
+        contenthtml += '<img src="/content/'+property.content[c].files[0]+'" style="width:33.3333332%;">'
+        contenthtml += '<img src="/content/'+property.content[c].files[1]+'" style="width:33.3333332%;">'        
+        contenthtml += '<img src="/content/'+property.content[c].files[2]+'" style="width:33.3333332%;"><br>' 
+      }
+
+    }
+
+    //$("#content").html(JSON.stringify(property.content));
+    //contenthtml += JSON.stringify(property.content)
+    $("#content").html(contenthtml);
+  } );  
+
+
+
+$("#addbutton").hover(
+  function() {
+    $( this ).css('opacity', '1.0')
+  }, function() {
+    $( this ).css('opacity', '0.75')
+  }
+);
+  
+      
+
+
+var photopre = '<div class="row" style="margin-bottom:15px;"><div class="twelve column">'
+var photoend = "</div></div>"
+
+$("#addbutton").click( function() {
+  $("#imgselector").fadeIn();
+})
+
+$("#imgselector1").click( function() {
+  $("#imgselector").fadeOut();
+  $("#photos").append(photopre+'<div class="image imageone" style="width:100%;"></div>'+photoend)
+});
+
+$("#imgselector2").click( function() {
+  $("#imgselector").fadeOut();
+  $("#photos").append(photopre+'<div class="imagerow"><div class="image imagetwo" style="margin-right: 15px;"></div> <div class="image imagetwo"></div></div>'+photoend)
+});
+
+$("#imgselector3").click( function() {
+  $("#imgselector").fadeOut();
+  $("#photos").append(photopre+'<div class="imagerow"><div class="image imagethree" style="margin-right: 15px;"></div> <div class="image imagethree" style="margin-right: 15px;"></div> <div class="image imagethree"></div></div>'+photoend)
+});
+
+});
+
+
+$(window).resize(function(){
+    // resize
+    resizing();
+});
+
+function resizing() {
+  $("#teambox").width($("#project").width() - 120)
+  $("#descriptionbox").width($("#project").width() - 120)
+  
+  console.log("window width: "+$(window).width())
+  if ($(window).width() < 600) { 
+    console.log("small!")
+    $("#logo").css("font-size", "16px")
+    $("#menu").css("font-size", "12px")
+
+  } else { 
+    console.log("not small!")
+    $("#logo").css("font-size", "20px")
+    $("#menu").css("font-size", "15px")
+  }
+}
+
+function checklogin() {
+  $.ajax({
+      url: '/api/checklogin', 
+      type: 'GET', 
+      contentType: 'application/json', 
+      data: JSON.stringify({})}
+    ).done(function(result) {
+      console.log(result);
+      if (result.login == "success") {
+        admin = true;
+        $("#admin").show()
+        $("#admin").css("margin-top", 0)
+        //$("#taken").click(takenProp);
+        //$("#delete").click(deleteProp);
+      } else {  
+        console.log("not loggedin")  
+        //$("#adminmenu").html('<a href="/login">admin</a> ')
+      }
+      
+    });
+    
+  }
+
+
+</script>
+
+</body>
+</html>
