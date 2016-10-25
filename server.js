@@ -11,90 +11,142 @@ console.log(client)
 var projects = []
 
 projects.push({id: 1, name:"Mapungubwe", thumbimage:"thumb_001.jpg", slug:"mapungubwe",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  location: "Mapungubwe, Limpopo",
+  locationlink: "https://www.google.co.za/maps/place/Mapungubwe+National+Park/@-22.2549689,29.2004356,11.25z/data=!4m5!3m4!1s0x1ec85aad3cb687c5:0xd3683a8ce5bb0717!8m2!3d-22.222048!4d29.3472691",
+  date: "March ‎2011",
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_1.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_2.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_3.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_4.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_5.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_6.jpg"}, 
+    {type:"wideimg", file:"mapungubwe_7.jpg"}, 
   ]
 })
 
 projects.push({id: 2, name:"Alexandra Heritage Centre", thumbimage:"thumb_002.jpg", slug:"alexandra",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  location: "Alexandra Township, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Alexandra+Township/@-26.0944769,28.0891017,14.5z/data=!4m5!3m4!1s0x1e9572b7ee44d5a9:0x3cb1fd4f5acb74f5!8m2!3d-26.09221!4d28.08983",
+  date: "‎April ‎2005",
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"alexandra_1.jpg"}, 
+    {type:"wideimg", file:"alexandra_2.jpg"}, 
+    {type:"wideimg", file:"alexandra_3.jpg"}, 
+    {type:"wideimg", file:"alexandra_4.jpg"}, 
+    {type:"wideimg", file:"alexandra_5.jpg"}, 
+    {type:"wideimg", file:"alexandra_6.jpg"}, 
+    {type:"wideimg", file:"alexandra_7.jpg"}, 
   ]
 })
 
 projects.push({id: 3, name:"House Kennedy", thumbimage:"thumb_003.jpg", slug:"kennedy",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  location: "Ballot Heights, George, Western Cape",
+  locationlink: "https://www.google.co.za/maps/place/George/@-33.9833545,22.4303161,13z/data=!3m1!4b1!4m5!3m4!1s0x1dd61ad1d896f1bf:0x17b84f9af7d3beb3!8m2!3d-33.9881281!4d22.4529878",
+  date: "February ‎2011",
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"kennedy_1.jpg"}, 
+    {type:"wideimg", file:"kennedy_2.jpg"}, 
+    {type:"wideimg", file:"kennedy_3.jpg"}, 
+    {type:"wideimg", file:"kennedy_4.jpg"}, 
+    {type:"wideimg", file:"kennedy_5.jpg"}, 
+    {type:"wideimg", file:"kennedy_6.jpg"}, 
+    {type:"wideimg", file:"kennedy_7.jpg"}, 
+    {type:"wideimg", file:"kennedy_8.jpg"}, 
+    {type:"wideimg", file:"kennedy_9.jpg"}, 
+    {type:"wideimg", file:"kennedy_10.jpg"}, 
+    {type:"wideimg", file:"kennedy_11.jpg"}, 
+    {type:"wideimg", file:"kennedy_12.jpg"}, 
+    {type:"wideimg", file:"kennedy_13.jpg"}, 
+    {type:"wideimg", file:"kennedy_14.jpg"}, 
+    {type:"wideimg", file:"kennedy_15.jpg"}, 
+    {type:"wideimg", file:"kennedy_16.jpg"}, 
   ]
 })
 
 projects.push({id: 4, name:"FR-2 Office", thumbimage:"thumb_004.jpg", slug:"fr2",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  location: "Chicago, USA",
+  locationlink: "https://www.google.co.za/maps/place/Chicago,+IL,+USA/@41.833648,-87.8722375,11z/data=!3m1!4b1!4m5!3m4!1s0x880e2c3cd0f4cbed:0xafe0a6ad09c0c000!8m2!3d41.8781136!4d-87.6297982",
+  date: "‎June ‎2014",
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"fr2_1.jpg"}, 
   ]
 })
 
 projects.push({id: 5, name:"Aksum", thumbimage:"thumb_005.jpg", slug:"aksum",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  location: "Aksum, Ethiopia",
+  locationlink: "https://www.google.co.za/maps/place/Aksum,+Ethiopia/@14.1325364,38.7290809,14z/data=!3m1!4b1!4m5!3m4!1s0x166bfcbea0c26cfb:0x74d0dc83a015ace1!8m2!3d14.1340317!4d38.7472905",
   date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"aksum_1.jpg"}, 
+    {type:"wideimg", file:"aksum_2.jpg"}, 
+    {type:"wideimg", file:"aksum_3.jpg"}, 
+    {type:"wideimg", file:"aksum_4.jpg"}, 
+    {type:"wideimg", file:"aksum_5.jpg"}, 
   ]
 })
 
 projects.push({id: 6, name:"Kigali City", thumbimage:"thumb_006.jpg", slug:"kigali",
-  location: "Mountain View, Johannesburg",
+  location: "Kigali City, Rwanda",
   locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
   date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"kigali_1.jpg"}, 
+    {type:"wideimg", file:"kigali_2.jpg"}, 
+    {type:"wideimg", file:"kigali_3.jpg"}, 
+    {type:"wideimg", file:"kigali_4.jpg"}, 
+    {type:"wideimg", file:"kigali_5.jpg"}, 
+    {type:"wideimg", file:"kigali_6.jpg"}, 
+    {type:"wideimg", file:"kigali_7.jpg"}, 
+    {type:"wideimg", file:"kigali_8.jpg"}, 
+    {type:"wideimg", file:"kigali_9.jpg"}, 
+    {type:"wideimg", file:"kigali_10.jpg"}, 
+    {type:"wideimg", file:"kigali_11.jpg"}, 
+    
   ]
 })
 
 projects.push({id: 7, name:"Sam Nzima Museum", thumbimage:"thumb_007.jpg", slug:"museum",
-  location: "Mountain View, Johannesburg",
+  location: "Hazyview, Mpumalanga",
   locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  date: "February ‎2013",
+  team: ["Peter Rich"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"museum_1.jpg"}, 
+    {type:"wideimg", file:"museum_2.jpg"}, 
   ]
 })
 
 projects.push({id: 8, name:"Braamfontein Lofts", thumbimage:"thumb_008.jpg", slug:"braamfontein",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
+  location: "Braamfontein Werf, Johannesburg",
+  locationlink: "https://www.google.co.za/maps/place/Braamfontein+Werf,+Johannesburg,+2092/@-26.1874149,28.0144962,17z/data=!3m1!4b1!4m5!3m4!1s0x1e950bf5c665b6fd:0xdb6f36bc8c1c537a!8m2!3d-26.1867342!4d28.0182428",
   date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
+  team: ["Peter Rich", "Rob Rich", "Shawn Labuschagne"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+     
+    
+    
+     {type:"wideimg", file:"braamfontein_1.jpg"},
+    {type:"wideimg", file:"braamfontein_3.jpg"}, 
+      {type:"wideimg", file:"braamfontein_9.jpg"}, 
+      {type:"wideimgthree", files: ["braamfontein_4.jpg", "braamfontein_5.jpg", "braamfontein_7.jpg"]}, 
+      {type:"wideimg", file:"braamfontein_6.jpg"},
+     {type:"wideimgtwo", files: ["braamfontein_2.jpg", "braamfontein_8.jpg"]},
+    
   ]
 })
 
@@ -105,7 +157,11 @@ projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", s
   team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"homestead_2.jpg"}, 
+    {type:"wideimg", file:"homestead_3.jpg"}, 
+    {type:"wideimg", file:"homestead_4.jpg"}, 
+    {type:"wideimg", file:"homestead_5.jpg"}, 
+    {type:"wideimg", file:"homestead_1.jpg"}, 
   ]
 })
 
@@ -116,7 +172,9 @@ projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.j
   team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
   description: "",  
   content:[
-    {type:"wideimg", file:"vercamer_1.jpg"}, 
+    {type:"wideimg", file:"hayat_1.jpg"}, 
+    {type:"wideimgthree", files: ["hayat_2.jpg", "hayat_3.jpg", "hayat_4.jpg"]}, 
+    {type:"wideimgtwo", files: ["hayat_5p6.jpg", "hayat_anim.gif"]}, 
   ]
 })
 
