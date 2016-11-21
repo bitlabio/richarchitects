@@ -22,11 +22,16 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:500" rel="stylesheet">
   <script src="/jquery.min.js"></script>
 
   <style>
   a { color: #888; text-decoration: none;}
   a:hover { color: #000; }
+  #logo { font-family: 'Orbitron', sans-serif; }
+
+
+
   </style>
 
 </head>
@@ -38,8 +43,8 @@
     <div class="row">
       <div class="twelve column" style="margin-top: 10px; padding:15px;">
         
-        <div id="logo" style="float:left; font-weight: 600;font-size: 20px; font-family: monospace;"><span>RICH ARCHITECTS</span></div>
-        <div id="menu" style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/contact"><span>CONTACT</span></a></div>
+        <div id="logo" style="float:left; font-weight: 600;font-size: 20px; "><span>RICH ARCHITECTS</span></div>
+        <div id="menu" style="float:right; font-weight: bold;margin-top: 4.5px;"><a href="/about"><span>ABOUT</span></a> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="/contact"><span>CONTACT</span></a></div>
       </div>
     </div>
 </div>
@@ -105,7 +110,7 @@ function projectsRenderHtml() {
   $("#projects").html("")  
   for (var p in projects) {
     var adminonly = false;
-    var ht = '<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img style="width:100%"' 
+    var ht = '<a href="'+projects[p].slug+'"><div class="projectthumb" style="float:left;"><img class="thumbs" style="width:100%"' 
 
     if (projects[p].thumbimage) {
       ht += 'src="/content/'+projects[p].thumbimage+'">'
@@ -126,24 +131,42 @@ function projectsRenderHtml() {
 
 function projectThumbsCss () {
   //applies css to project thumbnails
-  var perRow = 4;
+  var perRow = 7;
+  if ($("#projects").width() < 1000) { perRow = 6; }
   if ($("#projects").width() < 800) { perRow = 4; }
   if ($("#projects").width() < 600) { perRow = 3; }
   if ($("#projects").width() < 500) { perRow = 2.1; } //bug
   $(".projectthumb").width( $("#projects").width()/perRow - (15) )
   $(".projectthumb").height( (($("#projects").width()/perRow - (15))/1.618) + 35 )
   $(".projectthumb").css( "margin-right", 15 )
-  $(".projectthumb").css( "opacity", 0.90 )
+  $(".projectthumb").css( "opacity", 1 )
   $(".projectthumb").css( "color", "#fff" )
+
+  $(".projectthumb").css( "-webkit-filter", "grayscale(100%)" )
+  $(".projectthumb").css( "filter", "grayscale(100%)" )
+
 
   $(".projectthumb").unbind();
   $(".projectthumb").hover( 
    function() {
       $(this).css( "color", "#000" )
-      $(this).stop().animate({"opacity": 1}, 150);
+      //$(this).stop().animate({"opacity": 1}, 150);
+
+      grayscale($(this), 10, false)
+      //$(this).css( "-webkit-filter", "grayscale(100%)" )
+      //$(this).css( "filter", "grayscale(100%)" )
+
+
+
+
     }, function() {
       $(this).css( "color", "#fff" )
-      $(this).stop().animate({"opacity": 0.90}, 150);
+      //$(this).stop().animate({"opacity": 0.90}, 150);
+
+      grayscale($(this), 10, true)
+      //$(this).css( "-webkit-filter", "grayscale(50%)" )
+      //$(this).css( "filter", "grayscale(50%)" )
+
     }
   ) //end hover
 }// end function
@@ -151,6 +174,34 @@ function projectThumbsCss () {
 $(window).resize(function(){
     projectThumbsCss(); //fix the css whenever the window resizes
 });
+
+
+function grayscale(obj,millisec,bool){
+    if (bool){ /* We want to become grayscale */
+        var i = 0;
+        timertogray = setInterval(function addgray(){   
+            if (i < 101){
+                obj.css( "-webkit-filter", "grayscale(" + i + "%)" )
+                obj.css( "filter", "grayscale(" + i + "%)" )                
+                i = i + 5;
+            }else{
+                 clearinterval(timertogray); /* once the grayscale is 100%, we stop timer */
+            }
+        }, millisec);
+    }else{ /* We want to give color back */
+        var i = 100;
+        timerfromgray = setInterval(function addgray(){ 
+            if (i > 0){
+                obj.css( "-webkit-filter", "grayscale(" + i + "%)" )
+                obj.css( "filter", "grayscale(" + i + "%)" )  
+                i = i - 5;
+            }else{
+                clearinterval(timerfromgray); /* once the grayscale is 0%, we stop timer */
+            }
+        }, millisec);
+    }
+}
+
 
 
 function checklogin() {

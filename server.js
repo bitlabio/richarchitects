@@ -131,31 +131,27 @@ projects.push({id: 7, name:"Sam Nzima Museum", thumbimage:"thumb_007.jpg", slug:
 })
 
 projects.push({id: 8, name:"Braamfontein Lofts", thumbimage:"thumb_008.jpg", slug:"braamfontein",
-  location: "Braamfontein Werf, Johannesburg",
+  location: "West of Braamfontein, Johannesburg",
   locationlink: "https://www.google.co.za/maps/place/Braamfontein+Werf,+Johannesburg,+2092/@-26.1874149,28.0144962,17z/data=!3m1!4b1!4m5!3m4!1s0x1e950bf5c665b6fd:0xdb6f36bc8c1c537a!8m2!3d-26.1867342!4d28.0182428",
-  date: "June 2016",
-  team: ["Peter Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+  date: "2015 - 2017",
+  team: ["Shawn Labuschagne", "Robert Rich", "Ann Chang", "Thabo Mahlaka", "Sebastian Waters"],
+  description: "3.4 hectares of old industrial buildings are converted into middle class loft apartments. This development is intended to breathe new life and regenerate this part of the city. A leased strip of green belt forms the natural retreat from the existing industrial environment.",  
   content:[
-     
-    
-    
-     {type:"wideimg", file:"braamfontein_1.jpg"},
+    {type:"wideimg", file:"braamfontein_1.jpg"},
     {type:"wideimg", file:"braamfontein_3.jpg"}, 
-      {type:"wideimg", file:"braamfontein_9.jpg"}, 
-      {type:"wideimgthree", files: ["braamfontein_4.jpg", "braamfontein_5.jpg", "braamfontein_7.jpg"]}, 
-      {type:"wideimg", file:"braamfontein_6.jpg"},
-     {type:"wideimgtwo", files: ["braamfontein_2.jpg", "braamfontein_8.jpg"]},
-    
+    {type:"wideimg", file:"braamfontein_9.jpg"}, 
+    {type:"wideimgthree", files: ["braamfontein_4.jpg", "braamfontein_5.jpg", "braamfontein_7.jpg"]}, 
+    {type:"wideimg", file:"braamfontein_6.jpg"},
+    {type:"wideimgtwo", files: ["braamfontein_2.jpg", "braamfontein_8.jpg"]},
   ]
 })
 
 projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", slug:"homestead",
-  location: "Mountain View, Johannesburg",
+  location: "Edenburg, Rivonia, Johannesburg",
   locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+  date: "September 2015",
+  team: ["Peter Rich", "Robert Rich", "Rogan Rich", "Michael Brown", "Andre Meyer", "Blue Benington"],
+  description: "A 6 storey 95-unit upmarket apartment block with roof amenities that include a coffee bar, an infinity pool, a mini golf course, braai facilities and a children’s playground.",  
   content:[
     {type:"wideimg", file:"homestead_2.jpg"}, 
     {type:"wideimg", file:"homestead_3.jpg"}, 
@@ -166,11 +162,11 @@ projects.push({id: 9, name:"Homestead Apartments", thumbimage:"thumb_009.jpg", s
 })
 
 projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.jpg", slug:"hayat",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+  location: "Addis Ababa, Ethiopia",
+  locationlink: "https://www.google.co.za/maps/place/Addis+Ababa,+Ethiopia/@8.9631505,38.6380607,11z/data=!3m1!4b1!4m5!3m4!1s0x164b85cef5ab402d:0x8467b6b037a24d49!8m2!3d8.9806034!4d38.7577605?hl=en",
+  date: "August 2013",
+  team: ["Peter Rich", "Rogan Rich", "Shawn Labuschagne", "Quinton Clarke"],
+  description: "The Hayat Recreation Centre is a mixed-use retail, commercial and residential precinct in Addis Ababa, Ethiopia that explores our signature vaulted roof in a multi-level structure and gives the building an iconic look.",  
   content:[
     {type:"wideimg", file:"hayat_1.jpg"}, 
     {type:"wideimgthree", files: ["hayat_2.jpg", "hayat_3.jpg", "hayat_4.jpg"]}, 
@@ -178,12 +174,12 @@ projects.push({id: 10, name:"Hayat Recreational Centre", thumbimage:"thumb_010.j
   ]
 })
 
-projects.push({id: 11, name:"Greenstone Retreat", thumbimage:"thumb_011.jpg", slug:"greenstone",
-  location: "Mountain View, Johannesburg",
-  locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+projects.push({id: 11, name:"Wu Shan Retreat", thumbimage:"thumb_011.jpg", slug:"greenstone",
+  location: "Anji, Zhejiang Province, People’s Republic of China.",
+  locationlink: "https://www.google.co.za/maps/place/Anji,+Huzhou,+Zhejiang,+China/@30.6190621,119.0046885,9z/data=!3m1!4b1!4m5!3m4!1s0x344b237c9cbf02c1:0x43253d6668b0f907!8m2!3d30.638675!4d119.680353?hl=en",
+  date: "July 2016",
+  team: ["Peter Rich", "Rogan Rich", "Joanne Kridiotis", "Blue Benington", "Lloyd Bussio"],
+  description: "Wu Shan means Misty Mountain in Mandarin. A 200-unit boutique nature retreat, located three hours from Shanghai and one hour from Hangzhou in a beautiful fruit tree and flower-growing valley surrounded by bamboo forests. No cars are allowed on the 10 000m2 property with visitor’s parking off the main road. Golf carts bring visitors in over stone paved bridges and roads past the earth-vaulted reception restaurant building and on to their stone clad mountain bungalow. The design includes a variety of holiday house typologies ranging from honeymoon suites, family units to units for the elderly. An authentic nature experience!",  
   content:[
     {type:"wideimg", file:"greenstone_1.jpg"}, 
     {type:"wideimg", file:"greenstone_2.jpg"}, 
@@ -192,10 +188,10 @@ projects.push({id: 11, name:"Greenstone Retreat", thumbimage:"thumb_011.jpg", sl
 })
 
 projects.push({id: 12, name:"Geralta Lodge", thumbimage:"thumb_012.jpg", slug:"geralta", 
-  location: "Geralta, Ethiopia",
+  location: "Geralta, Northern Ethiopia",
   locationlink: "https://www.google.co.za/maps/place/Gheralta+Lodge/@13.9706612,39.4214988,17z/data=!3m1!4b1!4m5!3m4!1s0x166b7098802079c3:0xae6d8c959506cfd9!8m2!3d13.970656!4d39.4236928",
-  date: "December ‎2013",
-  team: ["Rogan Rich", "Shawn Labuschagne", "Rouan van der Ende", "Riyahd Cassiem"],
+  date: "July 2012",
+  team: ["Peter Rich", "Michael Ramage", "Rogan Rich", "Shawn Labuschagne", "Rouan van der Ende", "Riyahd Cassiem"],
   description: "Geralta Lodge is something completely unique! It is a boutique lodge in Northern Ethiopia that uses the sustainable technology of light earth tiles to create timbrel vaulted structures that are clad with local stone to camouflage the chalets in the dramatic landscape.",
 
   content:[
@@ -206,31 +202,27 @@ projects.push({id: 12, name:"Geralta Lodge", thumbimage:"thumb_012.jpg", slug:"g
   ]
 })
 
-projects.push({id: 13, name:"Marula Pavilion", thumbimage:"thumb_013.jpg", slug:"marula",
-  location: "Mountain View, Johannesburg",
+projects.push({id: 13, name:"Marula Lodge Pool Pavilion", thumbimage:"thumb_013.jpg", slug:"marula",
+  location: "25km SE of Windhoek, Namibia",
   locationlink: "https://www.google.co.za/maps/place/Namibia/@-22.6930922,9.5032826,5z/data=!3m1!4b1!4m5!3m4!1s0x1bf53c7e6ed37521:0xd3b9e5a5a8ecb261!8m2!3d-22.95764!4d18.49041",
-  date: "December 2014",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+  date: "2015",
+  team: ["Rogan Rich","Shawn Labuschagne", "Kate Hall"],
+  description: "We were employed by the landscape architects Green Inc to design a pool pavilion that would terminate at the end of a cascading water feature. The architecture is influenced by the landscape architecture, Kolmanskop and the framing of natural amenities. The elevated building forms the shadow for a pool pavilion.",  
   content:[
     {type:"wideimg", file:"marula_4.jpg"}, 
     {type:"wideimg", file:"marula_5.jpg"}, 
     {type:"wideimg", file:"marula_2.jpg"}, 
     {type:"wideimg", file:"marula_3.jpg"}, 
-    
     {type:"wideimg", file:"marula_1.jpg"}, 
-    
-    
-    
   ]
 })
 
 projects.push({id: 14, name:"House Vercamer", thumbimage:"thumb_014.jpg", slug:"vercamer",
-  location: "Namibia",
+  location: "Mountain View, Johannesburg",
   locationlink: "https://www.google.co.za/maps/place/Mountain+View,+Johannesburg,+2192/@-26.1686375,28.0729517,15z/data=!3m1!4b1!4m5!3m4!1s0x1e950db88045ef97:0x480bfe7b073b5633!8m2!3d-26.168458!4d28.0808098",
-  date: "June 2016",
-  team: ["Rogan Rich", "Rob Rich", "Shawn Labuschagne"],
-  description: "",  
+  date: "December 2013",
+  team: ["Robert Rich", "Rogan Rich",  "Shawn Labuschagne"],
+  description: "A compact lock up and go bachelor pad for a New York based client who spends a couple of months a year in Johannesburg. The ‘floating apartment’ makes use of light weight steel construction with a cantilevered north facing deck with expansive views, that is supported underneath by the existing separately rentable cottage.",  
   content:[
     {type:"wideimg", file:"vercamer_1.jpg"}, 
     {type:"wideimg", file:"vercamer_2.jpg"}, 
@@ -313,6 +305,10 @@ app.get('/', (req,res) => {
 
 app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname+'/public/contact.html'));  
+})
+
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname+'/public/about.html'));  
 })
 
 app.get('/:slug', (req, res, next) => {
